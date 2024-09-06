@@ -14,14 +14,14 @@ import { User } from './users/entities/user.entity';
 		}),
 		TypeOrmModule.forRoot({
 			type: 'postgres',
-			url: process.env.DB_URL,
+			// url: process.env.DB_URL,
 			host: process.env.DB_HOST,
 			port: parseInt(process.env.DB_PORT),
 			username: process.env.DB_USERNAME,
 			password: process.env.DB_PASSWORD,
 			database: process.env.DB_NAME,
 			autoLoadEntities: true,
-			synchronize: false,  // Desactivar sincronización automática
+			synchronize: true,  // Desactivar sincronización automática
 			ssl: process.env.DB_SSL === 'true',
 			extra: {
 				ssl:
